@@ -26,14 +26,15 @@ const buildRow = (targetArr, width, y) => {
     buildRow(targetArr, x - 1, y);
 }
 
-const  fillTilesArray = (targetArr, y = 0) => {
+const fillTilesArray = (targetArr, y = 0) => {
     let width = targetArr.length;
     buildRow(targetArr, width, y);
-    if (y === 3) return;
+    if (y === width - 1) return;
     fillTilesArray(targetArr, y + 1)
-    
 }
+
+
 
 const tileArr = initSqrArray(4);
 fillTilesArray(tileArr);
-console.log(tileArr);
+console.log(tileArr[0][1].xPosition);
