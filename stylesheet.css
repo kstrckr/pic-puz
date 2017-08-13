@@ -1,0 +1,57 @@
+#game-container {
+    position: absolute;
+    border: 1px solid #000;
+    width: 500px;
+    height: 500px;
+    left: calc(50% - 250px);
+    margin: 75px auto;
+}
+
+#tile_0 {
+    display: inline-block;
+    position: absolute;
+    border: 1px solid #000;
+    width: 25%;
+    height: 25%;
+    left: 0%;
+
+    background-image: url('_DSC1514.jpg');
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+}
+
+#tile_1 {
+    position: absolute;
+    border: 1px solid #000;
+    width: 25%;
+    height: 25%;
+    left: 25%;
+
+    background-image: url('_DSC1514.jpg');
+    background-repeat: no-repeat;
+    background-position: 25% 50%;
+}
+
+#tile_2 {
+    position: absolute;
+    border: 1px solid #000;
+    width: 25%;
+    height: 25%;
+    left: 50%;
+
+    background-image: url('_DSC1514.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+#tile_3 {
+    position: absolute;
+    border: 1px solid #000;
+    width: 25%;
+    height: 25%;
+    left: 75%;
+    
+    background-image: url('_DSC1514.jpg');
+    background-repeat: no-repeat;
+    background-position: 75% 50%;
+}
