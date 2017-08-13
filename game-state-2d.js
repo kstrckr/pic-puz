@@ -33,8 +33,22 @@ const fillTilesArray = (targetArr, x = 0) => {
     fillTilesArray(targetArr, x + 1)
 }
 
-
-
 const tileArr = initSqrArray(4);
 fillTilesArray(tileArr);
-console.log(tileArr[3][0]);
+console.log(tileArr);
+
+const buildDivs = (targetContainer, sourceArray) => {
+    let width = sourceArray.length;
+    let fragment = document.createDocumentFragment();
+
+    for (let x = 0; x < width; x++) {
+        for (let y = 0; y < width; y++) {
+            let div = document.createElement('div');
+            div.id = sourceArray[x][y].id;
+            div.className = "tile";
+            div.style.left = `${sourceArray[x][y].xPosition}%`
+            div.style.top = `${sourceArray[x][y].yPosition}%`
+        }
+    }
+
+}
