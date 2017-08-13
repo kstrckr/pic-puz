@@ -8,10 +8,10 @@
     <body>
         <div id="game-container">
         </div>
-        <script type="text/javascript" src="game-state.js"></script>
+        <script type="text/javascript" src="game-state-2d.js"></script>
         <script type="text/javascript"> 
             document.getElementById("game-container").addEventListener("click", function(e){
-                let clickedTileId = e.target.id;
+                let clickedTileId = e.srcElement.id;
                 moveAtile(clickedTileId, tiles)
             })
         </script>

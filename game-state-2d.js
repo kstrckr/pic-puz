@@ -33,9 +33,6 @@ const fillTilesArray = (targetArr, x = 0) => {
     fillTilesArray(targetArr, x + 1)
 }
 
-const tileArr = initSqrArray(4);
-fillTilesArray(tileArr);
-console.log(tileArr);
 
 const buildDivs = (targetContainer, sourceArray) => {
     let width = sourceArray.length;
@@ -48,7 +45,19 @@ const buildDivs = (targetContainer, sourceArray) => {
             div.className = "tile";
             div.style.left = `${sourceArray[x][y].xPosition}%`
             div.style.top = `${sourceArray[x][y].yPosition}%`
+            div.style.backgroundPositionX = `${sourceArray[x][y].xPosition + 8*x}%`;
+            div.style.backgroundPositionY = `${sourceArray[x][y].yPosition + 8*y}%`;
+            fragment.appendChild(div);
         }
     }
+    targetContainer.appendChild(fragment);
 
 }
+
+const tileArr = initSqrArray(4);
+const gameBoard = document.getElementById('game-container');
+fillTilesArray(tileArr);
+console.log(tileArr);
+buildDivs(gameBoard, tileArr);
+
+
