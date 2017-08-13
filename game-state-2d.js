@@ -10,31 +10,31 @@ function Tile(id, xPosition, yPosition) {
     this.yPosition = yPosition;
 }
 
-const buildRow = (targetArr, width, y) => {
-    let x = width;
-    let xPosition = 100 - x*25;
-    let yPosition = y*25;
-    let newTile = new Tile(`x${4 - x}_y${y}`, xPosition, yPosition);
-    if (targetArr[y] !== undefined) {
-        targetArr[y].push(newTile);
+const buildRow = (targetArr, height, x) => {
+    let y = height;
+    let yPosition = 100 - y*25;
+    let xPosition = x*25;
+    let newTile = new Tile(`x${x}_y${4 - y}`, xPosition, yPosition);
+    if (targetArr[x] !== undefined) {
+        targetArr[x].push(newTile);
     } else {
-        targetArr[y] = [
+        targetArr[x] = [
             newTile
         ]
     }
-    if (width === 1) return;
-    buildRow(targetArr, x - 1, y);
+    if (height === 1) return;
+    buildRow(targetArr, y - 1, x);
 }
 
-const fillTilesArray = (targetArr, y = 0) => {
+const fillTilesArray = (targetArr, x = 0) => {
     let width = targetArr.length;
-    buildRow(targetArr, width, y);
-    if (y === width - 1) return;
-    fillTilesArray(targetArr, y + 1)
+    buildRow(targetArr, width, x);
+    if (x === width - 1) return;
+    fillTilesArray(targetArr, x + 1)
 }
 
 
 
 const tileArr = initSqrArray(4);
 fillTilesArray(tileArr);
-console.log(tileArr[0][1].xPosition);
+console.log(tileArr[3][0]);
