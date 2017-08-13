@@ -1,6 +1,6 @@
 #game-container {
     position: absolute;
-   /* border: 1px solid #000; */
+   border: 1px solid #000;
     width: 600px;
     height: 600px;
     left: calc(50% - 300px);

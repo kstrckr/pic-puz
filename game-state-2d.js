@@ -50,6 +50,8 @@ const buildDivs = (targetContainer, sourceArray) => {
             fragment.appendChild(div);
         }
     }
+    let deletedTile = fragment.children[0];
+    fragment.removeChild(deletedTile);
     targetContainer.appendChild(fragment);
 
 }
