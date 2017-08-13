@@ -1,20 +1,21 @@
 #game-container {
     position: absolute;
    /* border: 1px solid #000; */
-    width: 500px;
-    height: 500px;
-    left: calc(50% - 250px);
+    width: 600px;
+    height: 600px;
+    left: calc(50% - 300px);
     margin: 75px auto;
 }
 
 .tile {
     background-image: url('_DSC1514.jpg');
     background-repeat: no-repeat;
+    background-size: 400% 400%;
     display: inline-block;
     position: absolute;
     border: 1px solid #000;
-    width: 24%;
-    height: 24%;
+    width: 25%;
+    height: 25%;
     padding: 0;
     margin: 0;
 }

@@ -10,7 +10,7 @@ function Tile(id, xPosition, yPosition) {
     this.yPosition = yPosition;
 }
 
-const buildRow = (targetArr, height, x) => {
+const buildCol = (targetArr, height, x) => {
     let y = height;
     let yPosition = 100 - y*25;
     let xPosition = x*25;
@@ -23,12 +23,12 @@ const buildRow = (targetArr, height, x) => {
         ]
     }
     if (height === 1) return;
-    buildRow(targetArr, y - 1, x);
+    buildCol(targetArr, y - 1, x);
 }
 
 const fillTilesArray = (targetArr, x = 0) => {
     let width = targetArr.length;
-    buildRow(targetArr, width, x);
+    buildCol(targetArr, width, x);
     if (x === width - 1) return;
     fillTilesArray(targetArr, x + 1)
 }
@@ -45,8 +45,8 @@ const buildDivs = (targetContainer, sourceArray) => {
             div.className = "tile";
             div.style.left = `${sourceArray[x][y].xPosition}%`
             div.style.top = `${sourceArray[x][y].yPosition}%`
-            div.style.backgroundPositionX = `${sourceArray[x][y].xPosition + 8*x}%`;
-            div.style.backgroundPositionY = `${sourceArray[x][y].yPosition + 8*y}%`;
+            div.style.backgroundPositionX = `${(100/3) * x}%`;
+            div.style.backgroundPositionY = `${(100/3) * y}%`;
             fragment.appendChild(div);
         }
     }
