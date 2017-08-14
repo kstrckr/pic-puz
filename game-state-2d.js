@@ -75,23 +75,33 @@ const buildDivs = (targetContainer, sourceArray) => {
 
 }
 
-const moveATile = (x, y, gameStateArr) => {
+const moveATile = (srcElementRef, x, y, gameStateArr) => {
     console.log(gameStateArr[x][y].id)
+    console.log(srcElementRef)
     let offsetX = x - empty.xPosition
     let offsetY = y - empty.yPosition
     if (Math.abs(offsetX) === 0 && Math.abs(offsetY) === 1) {
         console.log("this tile can move vertically!")
         if (offsetY > 0) {
-            console.log("this tile can move up")
+            console.log('this tile can move up')
+            srcElementRef.style.top = `${(y-1) * 25}%`;
+            empty.yPosition++
+            console.log(empty)
         } else {
             console.log("this tile can move down")
+            srcElementRef.style.top = `${(y+1) * 25}%`;
+            empty.yPosition--
         }
     } else if (Math.abs(offsetX) === 1 && Math.abs(offsetY) === 0) {
         console.log('this tile can move horizontally!')
         if (offsetX > 0) {
             console.log('this tile can move left!')
+            srcElementRef.style.left = `${(x-1) * 25}%`;
+            empty.xPosition++
         } else {
             console.log('this tile can move right')
+            srcElementRef.style.left = `${(x+1) * 25}%`;
+            empty.xPosition--
         }
     }
 }

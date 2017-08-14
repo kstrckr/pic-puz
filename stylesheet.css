@@ -8,7 +8,7 @@
 }
 
 .tile {
-    background-image: url('_DSC1514.jpg');
+    background-image: url('09.jpg');
     background-repeat: no-repeat;
     background-size: 400% 400%;
     display: inline-block;
@@ -18,10 +18,10 @@
     height: 24.5%;
     padding: 0;
     margin: 0;
+
+    transition: all 0.3s ease-in-out;
 }
 
 .tile:hover {
-    background-image: none;
-    background-color: red;
-    z-index: 100;
+    border-color: red;
 }
