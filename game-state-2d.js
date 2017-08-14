@@ -22,6 +22,7 @@ function Tile(id, xPosition, yPosition, bgOffset) {
     this.xPosition = xPosition;
     this.yPosition = yPosition;
     this.bgOffset = bgOffset;
+    this.isEmpty = false;
 }
 
 const buildCol = (targetArr, height, x, bgOffsetArr) => {
@@ -48,7 +49,6 @@ const fillTilesArray = (targetArr, offsetArr, x = 0) => {
     fillTilesArray(targetArr, offsetArr, x + 1)
 }
 
-
 const buildDivs = (targetContainer, sourceArray) => {
     let width = sourceArray.length;
     let fragment = document.createDocumentFragment();
@@ -71,8 +71,9 @@ const buildDivs = (targetContainer, sourceArray) => {
 
 }
 
-const moveATile = (clickedTileId) => {
-    console.log(clickedTileId)
+const moveATile = (x, y) => {
+    
+    
 }
 
 const tileArr = initSqrArray(4);

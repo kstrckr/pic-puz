@@ -11,8 +11,11 @@
         <script type="text/javascript" src="game-state-2d.js"></script>
         <script type="text/javascript"> 
             document.getElementById("game-container").addEventListener("click", function(e){
-                let clickedTileId = e.srcElement.id;
-                moveATile(clickedTileId)
+                let clickedElement = e.srcElement
+                if (e.srcElement.id === 'game-container') return;
+                let clickedTileX = parseInt(clickedElement.style.left)/25;
+                let clickedTileY = parseInt(clickedElement.style.top)/25;
+                moveATile(clickedTileX, clickedTileY)
             })
         </script>
         
