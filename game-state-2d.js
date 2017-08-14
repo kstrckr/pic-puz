@@ -71,6 +71,10 @@ const buildDivs = (targetContainer, sourceArray) => {
 
 }
 
+const moveATile = (clickedTileId) => {
+    console.log(clickedTileId)
+}
+
 const tileArr = initSqrArray(4);
 const gameBoard = document.getElementById('game-container');
 let offsetArr = randomBgOffsetArr(16)
