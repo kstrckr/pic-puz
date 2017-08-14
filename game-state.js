@@ -14,6 +14,10 @@ const buildDivs = (outputTarget, edgeLength) => {
 
 const tiles = new Array(4);
 
+const empty = {
+    
+}
+
 //constructor of Tiles
 function Tile(id, xPosition, yPosition) {
     this.id = id;

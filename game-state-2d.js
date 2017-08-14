@@ -22,7 +22,11 @@ function Tile(id, xPosition, yPosition, bgOffset) {
     this.xPosition = xPosition;
     this.yPosition = yPosition;
     this.bgOffset = bgOffset;
-    this.isEmpty = false;
+}
+
+const empty = {
+    xPosition: 0,
+    yPosition: 0,
 }
 
 const buildCol = (targetArr, height, x, bgOffsetArr) => {
@@ -71,9 +75,25 @@ const buildDivs = (targetContainer, sourceArray) => {
 
 }
 
-const moveATile = (x, y) => {
-    
-    
+const moveATile = (x, y, gameStateArr) => {
+    console.log(gameStateArr[x][y].id)
+    let offsetX = x - empty.xPosition
+    let offsetY = y - empty.yPosition
+    if (Math.abs(offsetX) === 0 && Math.abs(offsetY) === 1) {
+        console.log("this tile can move vertically!")
+        if (offsetY > 0) {
+            console.log("this tile can move up")
+        } else {
+            console.log("this tile can move down")
+        }
+    } else if (Math.abs(offsetX) === 1 && Math.abs(offsetY) === 0) {
+        console.log('this tile can move horizontally!')
+        if (offsetX > 0) {
+            console.log('this tile can move left!')
+        } else {
+            console.log('this tile can move right')
+        }
+    }
 }
 
 const tileArr = initSqrArray(4);
@@ -83,5 +103,3 @@ fillTilesArray(tileArr, offsetArr);
 console.log(tileArr);
 
 buildDivs(gameBoard, tileArr);
-
-
