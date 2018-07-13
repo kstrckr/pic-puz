@@ -76,8 +76,8 @@ const buildDivs = (targetContainer, sourceArray) => {
 }
 
 const moveATile = (targetElementRef, x, y, gameStateArr) => {
-    console.log(gameStateArr[x][y].id)
-    console.log(targetElementRef)
+    // console.log(gameStateArr[x][y].id)
+    // console.log(targetElementRef)
     let offsetX = x - empty.xPosition
     let offsetY = y - empty.yPosition
     if (Math.abs(offsetX) === 0 && Math.abs(offsetY) === 1) {
